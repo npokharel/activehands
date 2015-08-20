@@ -838,7 +838,7 @@ img.wp-smiley,
 	font-weight: bold;
 	line-height: 1;
 	margin: 0;
-	padding: 58px 0 10px;
+	/*padding: 58px 0 10px;*/
 }
 
 .site-description {
@@ -3146,7 +3146,7 @@ footer.entry-meta {
 	}
 
 	.site-title {
-		color: #000;
+		color: whitesmoke;
 		font-size: 21pt;
 	}
 
