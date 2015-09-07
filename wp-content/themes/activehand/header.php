@@ -28,21 +28,45 @@
 
 
             </div>
+
             <div class="collapse navbar-collapse navbar-right" id="bs-AH-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-
                     <?php
-                    $args = array(
-                        'theme_location' => 'primary',
-                        'container'       => false, // remove outer div
-                        'items_wrap' => '%3$s' // remove ul
-                    );
 
-                    wp_nav_menu($args); ?>
+                    $menu_name = 'primary';
+                    $locations = get_nav_menu_locations();
+                    $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+                    $menuitems = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) );
+                    foreach( $menuitems as $item ):
+                        // set up title and url
+                        $title = $item->title;
+                        $link = $item->url;
+                        $item_object_id=$item->object_id;
+                        $args = array(
+                            'child_of' => $item_object_id,
+                            'title_li' => '',
+                            "echo"=> false
+                        );
 
+                        $children = wp_list_pages($args);
+
+                        $has_child = ($children != null && $children != '') ? true : false;
+                        ?>
+                        <li <?php if($has_child){ echo " class='dropdown'";}else{"";};?>>
+                            <a href="<?php echo $link ?>" <?php if($has_child){echo " class='dropdown-toggle' data-toggle='dropdown'";}else{"";} ?>><?php echo $title ?><?php if($has_child){echo " <b class='caret''></b>";}else{"";} ?></a>
+                            <?php if($has_child): ?>
+                                <ul class="dropdown-menu">
+                                    <?php echo $children ?>
+                                </ul>
+                            <?php endif;?>
+                        </li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
+
         </div>
     </nav>
 </header>
+
+
 

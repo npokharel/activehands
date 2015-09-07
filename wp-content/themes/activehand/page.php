@@ -7,15 +7,15 @@ if(have_posts()) :
             <div class="jumbotron">
                 <div class="container">
 
-                    <!--<span class="parent-link"><a href="<?php /*echo get_the_permalink(get_top_ancestor_id())*/?>"><?php /*echo get_the_title(get_top_ancestor_id()) */?></a> </span>-->
+                    <span class="parent-link"><a href="<?php echo get_the_permalink(get_top_ancestor_id()); ?>"><?php echo get_the_title(get_top_ancestor_id()) ?></a> </span>
                     <?php
-                    /*            $args = array(
+                                $args = array(
                                     'child_of' => get_top_ancestor_id(),
                                     'title_li' => ''
                                 );
 
-                                */?>
-                    <?php /*wp_list_pages($args);  */?>
+                                ?>
+                    <?php wp_list_pages($args);  ?>
 
                     <h2><?php the_title(); ?></h2>
                     <p><?php the_content(); ?></p>

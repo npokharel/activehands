@@ -52,7 +52,8 @@ function get_top_ancestor_id(){
         $ancestors = array_reverse(get_post_ancestors($post->ID));
         return $ancestors[0];
     }
+
     return $post->ID;
 }
 
-//require_once('wp_bootstrap_navwalker.php');
+
