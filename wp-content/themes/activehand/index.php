@@ -1,5 +1,15 @@
 <?php
-get_header();
+/**
+ * Created by PhpStorm.
+ * User: bsejawal
+ * Date: 9/1/15
+ * Time: 7:09 AM
+ */
+
+
+get_header();?>
+<div class="container">
+<?php
 if(have_posts()) :
     while(have_posts()) : the_post() ?>
 
@@ -10,7 +20,10 @@ if(have_posts()) :
     <?php endwhile;
 else :
     echo "test";
-endif;
+endif; ?>
+
+</div>
+<?php
 get_footer();
 
 ?>

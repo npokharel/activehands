@@ -1,3 +1,11 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: bsejawal
+ * Date: 9/1/15
+ * Time: 7:09 AM
+ */
+?>
 <footer>
     <nav class="navbar navbar-default navbar-static-top no-margin" role="navigation">
         <div class="container">

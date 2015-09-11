@@ -37,13 +37,6 @@ register_nav_menus(array(
 
 ));
 
-//add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
-//function special_nav_class($classes, $item){
-//    if($item->title == "About Us"){ //Notice you can change the conditional from is_single() and $item->title
-//        $classes[] = "dropdown";
-//    }
-//    return $classes;
-//}
 
 // Get top ancestor
 function get_top_ancestor_id(){
@@ -55,5 +48,12 @@ function get_top_ancestor_id(){
 
     return $post->ID;
 }
+
+function remove_page_class($wp_list_pages) {
+    $pattern = '/\<li class="page_item[^>]*>/';
+    $replace_with = '<li>';
+    return preg_replace($pattern, $replace_with, $wp_list_pages);
+}
+add_filter('wp_list_pages', 'remove_page_class');
 
 
