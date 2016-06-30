@@ -7,6 +7,7 @@
  */
 
 
+
 // CSS include
 function wp_style(){
 
@@ -15,6 +16,10 @@ function wp_style(){
 
     wp_register_style( 'theme', get_template_directory_uri() . '/css/theme.css', array(), '1.0' );
     wp_enqueue_style('theme');
+
+    wp_register_style( 'overwrite', get_template_directory_uri() . '/css/overwrite.css', array(), '1.0' );
+    
+    wp_enqueue_style('overwrite');
 }
 
 add_action('wp_enqueue_scripts', 'wp_style');
@@ -57,3 +62,21 @@ function remove_page_class($wp_list_pages) {
 add_filter('wp_list_pages', 'remove_page_class');
 
 
+
+show_admin_bar( false );
+
+add_theme_support( 'post-thumbnails' ); 
+function almond_custom_init() {
+    add_post_type_support( 'page', 'excerpt' );
+    add_post_type_support( 'post', 'page-attributes' );
+}
+add_action('init', 'almond_custom_init');
+
+
+function limit_letter($string,$count){
+  $excerpt =$string;
+  $excerpt = strip_tags($excerpt);
+  $excerpt = substr($excerpt, 0, $count);
+  $excerpt = $excerpt.'..';
+  return $excerpt;
+}

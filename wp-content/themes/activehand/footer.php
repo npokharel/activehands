@@ -7,34 +7,31 @@
  */
 ?>
 <footer>
-    <nav class="navbar navbar-default navbar-static-top no-margin" role="navigation">
+<!-- footer -->
+<div class="footer_wrapper">
+    <div class="footer_nav_wrapper">
         <div class="container">
+            <ul class="fmenu">
+                <?php
+                $args = array(
+                    'theme_location' => 'footer',
+                    'container'       => false, // remove outer div
+                    'items_wrap' => '%3$s' // remove ul
+                );
 
-            <div class="collapse navbar-collapse" id="bs-AH-navbar-collapse-2">
-                <ul class="nav navbar-nav">
+                wp_nav_menu($args); ?>
+            </ul>
+        </div>        
+    </div>
 
-                    <?php
-                    $args = array(
-                        'theme_location' => 'footer',
-                        'container'       => false, // remove outer div
-                        'items_wrap' => '%3$s' // remove ul
-                    );
-
-                    wp_nav_menu($args); ?>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="container">
-
-        <p><?php bloginfo("name"); ?>- &copy; <?php echo date("Y"); ?></p>
-
-
-        <?php
+    <p class="cright"><?php bloginfo("name"); ?> &copy; <?php echo date("Y"); ?></p>
+    
+</div>
+<!-- /.footer -->
+   
+</footer>
+ <?php
         wp_footer();
         ?>
-    </div>
-</footer>
-
 </body>
 </html>
