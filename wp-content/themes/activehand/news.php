@@ -8,7 +8,7 @@ get_header();
 <div class="container left_container_wrapper">	
 	<div class="row">
 		<div class="col-md-8 col-sm-6 category_wrapper">
-			<h2><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a> </h2>
+			<h2> <?php the_title(); ?> </h2>
 			<?php
 				$args = array(
 					'post_type' => 'post',
@@ -43,7 +43,7 @@ get_header();
 
 
 				<div class="category_excerpt">				      
-					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+					<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 					<p><?php the_excerpt(); ?></p>	
 				</div>
 

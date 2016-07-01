@@ -66,11 +66,16 @@ p{text-align: justify; line-height: 150%; font-size: 16px;}
     padding-bottom: 20px;    
 }
 
+.footer_wrapper p{color: #666666; text-transform: uppercase;}
+
+
 .footer_wrapper .footer_nav_wrapper{
     padding: 20px;
     margin-bottom: 20px;
     border-bottom: 1px solid #e9e9e9;
 }
+
+
 
 ul.fmenu {
     margin: 10px auto;
@@ -131,3 +136,8 @@ ul.list_latest_news li {
 
 .panel-body h3{margin-top: 0; font-size: 20px;}
 .category_excerpt{margin-bottom: 0 0 15px 0; padding:0; border-bottom: 1px solid #dfdfdf; padding-bottom: 20px;}
+
+.category_wrapper h2{border-bottom:1px solid #dfdfdf; padding-bottom:10px; text-transform:uppercase; color: #666666;
+}
+
+.category_wrapper img{margin-bottom: 10px;}

@@ -11,14 +11,12 @@ get_header();?>
 	<div class="row">
 		<div class="col-md-8 col-sm-6 category_wrapper">
 			<?php
-				if(have_posts()) :
-				    while(have_posts()) : the_post() ?>
-						<div class="category_excerpt">				      
-							<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-							<p><?php the_excerpt(); ?></p>	
-						</div>			        
-					<?php endwhile;			
-				endif; ?>			
+				// Start the Loop.
+				while ( have_posts() ) : the_post();
+					// Include the page content template.
+					get_template_part( 'content', 'page' );	
+				endwhile;
+				?>			
 		</div>
 		<div class="col-md-4">	
 		<?php get_template_part( 'inc/rightinc', 'none' ); ?>		
