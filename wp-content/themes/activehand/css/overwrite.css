@@ -1,0 +1,26 @@
+.header_wrapper .container .navbar-default {
+    background-color:#f2f2f2;
+    border-color:#f2f2f2;
+}
+
+.navbar-nav{margin-top: 25px;}
+
+.brand-logo img{ margin-right: 30px; border:1px solid #e4e4e4; }
+
+
+.carousel-caption {
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	-o-border-radius: 20px;
+	border-radius: 20px;
+	background-color:rgba(192,192,192,0.5);
+	}
+
+.carousel-caption p{text-align: center;}
+
+.navbar-nav>li {
+    float: left;
+    font-size: 16px;
+    font-family: arial;
+}
