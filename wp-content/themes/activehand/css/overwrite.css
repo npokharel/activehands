@@ -41,3 +41,11 @@
 	color: #666666;
 	font-family: arial;
 }
+
+.b-from-right {
+	position: relative;
+	right: -100%;
+	left: 50%;
+	transform: translateX(-5%);
+	top: 45%;
+}
